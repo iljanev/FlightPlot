@@ -269,7 +269,7 @@ public class PositionEstimator extends PlotProcessor {
             acc.subtract(accBias);
             act = true;
         }
-        if (act) {
+        if (act && rot != null && acc != null) {
             if (!Double.isNaN(timePrev)) {
                 double dt = time - timePrev;
                 double dBaro = corrGPS[2][0] * param_W_GPS[2][0] * wGPS[2] * dt;
